@@ -1,0 +1,121 @@
+                                                    CSS
+                                                ___________
+
+
+
+Cascading Style Sheet - Hoja de estilos en cascadas
+
+- Lista de reglas   |       Partes del CSS
+- Selectores        |
+
+- Normalmente se le indica al HTML mediante un link en el head, aunque también se puede incrustar.
+- Solo hay un tipo de comentarios: /* */ comentario multilinea
+
+- Hay 2 tipos de elemento:
+            · Tipo Bloque : Header footer h1 ol li... El elemento generico de bloque es el <div>
+            · Tipo inline :  a, em, strong, input, button, img El elemento generico de bloque es el <span>
+
+- Desde un archivo css se puede hacer @import url(extra.css)  --> Por ejemplo para importar fuentes
+
+- Cada regla CSS tiene 3 cosas: Selector, nombre de la propiedad, valor.
+
+                body {
+                    font-family: sans-serif;
+                }
+
+Selectores
+----------
+
+     Tipo de Selectores   |     Descripción
+    ------------------------------------------------------------------------------------------------------------------
+        Por <tag>         |   Todos los tags seleccionados
+    ------------------------------------------------------------------------------------------------------------------
+        Por ID            |   Selecciona un elemento con ID única
+    ------------------------------------------------------------------------------------------------------------------
+        Por class         |   Selecciona por clase y permite agrupar ya que los elementos pueden tener varias clases
+    ------------------------------------------------------------------------------------------------------------------
+
+Combinaciones
+--------------
+
+1.- Se pueden combinar mediante "," funcionan como una OR lógica. Ejemplo h1, h2, h3 {font-size: 40px;}
+2.- Selector descendiente: <primer elemento> <segundo elemento(hijo)> { "reglas" } ---> todos los descendientes obtendrán los estilos
+3.- Hijo directo: tag1 > tag2 { "reglas" } --> Solo se aplica si es hijo directo
+4.- Tag y clase: tag.class --> Solo los class de esa etiqueta obtendrán los estilos
+5.- Selector de atributo: tag[attr] --> Selecciona los tags que tengan el atributo (no importa el valor), si se pone sin tag, también funciona tag[attr="value"]
+
+Propiedades
+-----------
+
+Distancias:
+
+            - Distancias absolutas: px, pt, cm, mm, in.
+            - Distancias relativas: % (relativo al padre), em (tamaño relativo a una m de la fuente), rem (tamaño de fuente del elemento raiz), vw (viewport width), vh(viewport height).
+
+Colores:
+
+            - red : Por palabra
+            - #F00 : RGB
+            - #FF0000 : Hexadecimal
+            - rgb(255,0,0)
+            - rgba(255,0,0,1.0)
+            - hsl(240,100%,100%)
+
+* cssreference.io -----> Web para propiedades
+
+Display:
+
+            - none: No se muestra el elemento
+            - hidden: Ocupa espacio pero no se ve
+            - block: Lo muestra como bloque
+            - inline: Lo muestra inline
+            - inline-block: 
+            - flex: Se aplica el algoritmo flexbox (relativamente nuevo) 
+
+BoxModel: Todos los elementos tipo block son una caja (ver box model)
+
+            - Se sigue oren de agujas del reloj.. top -right - bottom -left
+            - margin: 1rem .5rem .8rem .5rem --------> si pones un valor solo, se aplica a todos, si pones dos, se aplica simetrico.
+            - padding: 1rem .5rem .8rem .5rem
+            - border
+
+Especificidad del selector 
+---------------------------
+
+Pesos de los Selectores:
+
+
+     Tipo de Selectores     |     Peso
+    ------------------------------------------
+        Por <tag>           |   (0,0,0,1)
+    ------------------------------------------
+        Por .class          |   (0,0,1,0)
+    ------------------------------------------
+        Por #ID             |   (0,1,0,0)
+    ------------------------------------------
+        Por inline style    |   (1,0,0,0)
+    ------------------------------------------
+
+
+-------------> !important sirve para marcar reglas y crear importancia.
+
+Herencia
+---------
+
+Hay propiedades que se heredan: color, font-size, font-family otras no, como los border, margin...
+
+
+La cascada
+-----------
+
+1.- Se listan TODAS las reglas que afectan a cada elemento y se separan !important de las que no
+2.- User Agent Stylesheet : Hoja de estilos del navegador por defecto. Se mira de dónde ha provenido la regla (websidte , browser)
+3.- Especificidad
+4.- Orden de escritura. La última es la que manda.
+
+
+27/02
+-----
+
+Repasar FLEX !
+
