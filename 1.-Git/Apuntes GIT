@@ -1,0 +1,41 @@
+##### GIT #####
+
+    - git commit -m "Texto Commit": Bien para uso personal, la buena práctica profesional es, primera línea título del commit y segunda línea descripción
+    - git commit -am: Hace un add+commit
+
+* Nunca se versionan los ficheros intermedios, solo código fuente!! (Backups, ejecutables, ficheros compilados...etc)
+
+Si ocurre que versionamos algo accidentalmente:
+    - git rm archivo: borra ese archivo
+    
+Cambiar de vista de commit:
+    - git checkout "numero de rama"
+
+(Linux) Cuanto ocupa algo:
+    - du -h
+
+Gitgnore:
+    - echo > .gitignore
+
+Blame ¿Quien ha tocado cada línea?:
+    -git blame
+    
+Crear repositiorio remoto:
+    - mkdir "nombre directorio" : Creamos un directorio
+    - git init --bare: Crea un repositorio "en crudo", no es un repo para trabajar, solo para alojar
+    - git remote add origin "./ruta":  Configura la dirección del repositiorio remoto dándole el nombre 'origin'
+    - git push --set-upstream origin master: Configura la rama por defecto dónde se subirán los commits al hacer push
+    -
+
+Crear clon de repositirio:
+    - git clone "nombre del repo origen" "nombre del repo destino"
+
+Git Pull:
+    - git pull: hace un git fetch (se descarga los archivos) y un git merge (los mezcla)
+    
+Ramas:
+    - git branch "nombre"
+    - git checkout "nombre rama"
+    - git checkout -b "nombre" : hace ambos comandos anteriores a la vez
+
+    
