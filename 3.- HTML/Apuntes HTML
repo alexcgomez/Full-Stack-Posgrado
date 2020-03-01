@@ -1,0 +1,52 @@
+        HTML
+---------------------
+
+html.spec.whatwg.org/dev/
+
+Entidades: son caracteres especiales que empiezan por &. Actualmente, las páginas web estan codificadas en UTF.
+
+&lt; → <
+&gt; → >
+&quot; → ”
+&ndash; → –
+&mdash; → —
+&eacute; → é
+&egrave; → è
+&exist; → ∃
+
+Para poner comentarios: <!--  Texto  --> (Son multilíniea, no se pueden poner comentarios en partes de un tag)
+
+La plantilla html en el estándard actual (HTML5) es el siguiente:
+
+<!doctype html>
+<html lang="en">                ----> Tag Raíz
+    <head>                      ----> Cabecera de la página (no se ve nada excepto title)
+        <meta charset="utf-8">
+        <title>Hello!</title>
+    </head>
+    <body>                      ----> Cuerpo de la página, contenido que aparece en la web
+        <h1>Hello World!</h1>
+        <p>This is the shortest page ever.</p>
+    </body>
+</html>
+
+
+DOM (Document Object Model): Estructura de la memoria proviniente de la lectura e interpretación del documento HTML.
+
+<meta> : Contienen atributos que no se pueden clasificar en otras etiquetas
+
+<main> <section> <article> ... etc: Son tags semánticos, importantes para los ordenadores (sistemas automatizados que leen los datos) Muy importante para SEO y Posicionamiento.
+
+FORMS
+------
+
+- Un form es un link
+- Los inputs del form tienen que ir dentro de <p>
+
+    Input: 
+            TAGS
+            type    Indica el tipo de dato que quieres producir.
+            name    Serían los campos, "el titulo que se le da al valor".
+            value   Valor inicial.
+            ------------------------------ESTOS 3 TODOS LOS TIENEN
+            
