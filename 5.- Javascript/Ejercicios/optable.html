@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio Javascript</title>
-    <style>
-        table{
-            border-collapse: collapse;
-            
-        }
 
-        table td, table th{
-            border: 1px solid black;
-            padding: .2rem .4rem;
-            text-align: center;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <style>
+    body{
+      background: rgb(77, 79, 82);
+      font-family: monospace;
 
-        table td:last-child {
-            text-align: right;
-        }
+    }
 
-    </style>
-  </head>
-  <body>
-    <form>
-      <p>
-        <label>Operando 1<input type="number" name="op1" value="0"/> </label>
-      </p>
-      <p>
-        <label>Operando 1<input type="number" name="op2" value="0"/> </label>
-      </p>
-      <button type="submit">Compute</button>
-    </form>
+    form{
+      text-align: center;
+      margin-top: 5%;
+    }
 
-    <main>
-        <table>
+    form input{
+      margin: 2rem;
+      padding: .1rem;
+      width: 300px;
+      text-align: center;
+      font-size: 30px;
+      border-radius: 10px;
+    }
 
-        </table>
-    </main>
+    form label{
+      font-size: 30px;
+      color: orange;
+      text-shadow: 1px 1px 2px black;
+    }
 
-    <script>
-        let form = document.forms[0];
-        let op1 = document.querySelector('input[name="op1"');
-        let op2 = document.querySelector('input[name="op2"');
-        let table = document.querySelector('main table');
-
-        const removeChildren = (element) => {
-            while (element.firstElementChild){
-                element.firstElementChild.remove();
-            }
-
-        }
-
-        // TODO: funcion addRow para simplificar.
-
-        // TODO (Hard) Hacer una tabla de operadores y funcione que genere la tabla con un for
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            let val1 = Number(op1.value);
-            let val2 = Number(op2.value);
-
-            removeChildren(table);
-
-            let th = document.createElement('tr');
-            th.innerHTML = "<th>Operación</th><th>Resultado</th>"
-            table.appendChild(th);    
+    /* form input[type="checkbox"]{
 
 
+    } */
 
-            let tr = document.createElement('tr');
-            tr.innerHTML = `<td>${val1} + ${val2}</td><td>${val1 + val2}</td>`
-            table.appendChild(tr);    
+    main{
+      display: flex;
+      justify-content: center;
+      margin: 2rem;
+    }
 
-        })
 
-    </script>
-  </body>
+    table {
+      border-collapse: collapse;
+      font-size: 30px;
+      border-radius: 10px;
+
+    }
+
+    table td,
+    table th {
+      border: 1px solid black;
+      padding: .2rem .4rem;
+      text-align: center;
+    }
+    table th{
+    background: teal;}
+
+    table td:last-child {
+      text-align: right;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>
+      <label>Operando 1 <br> <input type="number" name="op1" value="20" /> </label>
+    </p>
+    <p>
+      <label>Operando 2 <br> <input type="number" name="op2" value="2" /> </label>
+    </p>
+    <label for="multiply">Multiplica
+      <input type="checkbox" name="multiply" id="multiply"></label>
+    <!-- <button type="submit">Compute</button> -->
+  </form>
+
+  <main>
+    <table>
+    </table>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
 </html>
