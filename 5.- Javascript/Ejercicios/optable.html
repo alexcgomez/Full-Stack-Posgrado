@@ -1,91 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <style>
-    body{
-      background: rgb(77, 79, 82);
-      font-family: monospace;
+    <style>
+      body {
+        background: rgb(77, 79, 82);
+        font-family: monospace;
+      }
 
-    }
+      form {
+        text-align: left;
+        margin-top: 5%;
+      }
 
-    form{
-      text-align: center;
-      margin-top: 5%;
-    }
+      form input[type="number"] {
+        margin: 0.5rem;
+        padding: 0.1rem;
+        width: 300px;
+        text-align: center;
+        border-radius: 10px;
+      }
 
-    form input{
-      margin: 2rem;
-      padding: .1rem;
-      width: 300px;
-      text-align: center;
-      font-size: 30px;
-      border-radius: 10px;
-    }
+      form input[type="checkbox"] {
+        display: none;
+      }
 
-    form label{
-      font-size: 30px;
-      color: orange;
-      text-shadow: 1px 1px 2px black;
-    }
+      input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 1px 4px 2px 1rem;
+        vertical-align: middle;
+        background: white;
+        background-size: cover;
+        cursor: pointer;
+      }
 
-    /* form input[type="checkbox"]{
+      input[type="checkbox"]:checked + label span {
+        background: orange;
+        background-size: cover;
+      }
+      form label {
+        color: orange;
+        text-shadow: 1px 1px 2px black;
+      }
 
+      form div {
+        text-align: left;
+      }
 
-    } */
+      main {
+        display: flex;
+        justify-content: center;
+        margin: 2rem;
+      }
 
-    main{
-      display: flex;
-      justify-content: center;
-      margin: 2rem;
-    }
+      table {
+        border-collapse: collapse;
+        border-radius: 10px;
+        color: white;
+      }
 
+      table td,
+      table th {
+        border: 1px solid black;
+        padding: 0.2rem 0.4rem;
+        text-align: center;
+      }
+      table th {
+        background: orange;
+        color: black;
+      }
 
-    table {
-      border-collapse: collapse;
-      font-size: 30px;
-      border-radius: 10px;
+      table td:last-child {
+        text-align: right;
+      }
+    </style>
+  </head>
 
-    }
+  <body>
+    <form>
+      <p>
+        <label
+          >Operando 1 <br />
+          <input type="number" name="op1" value="" />
+        </label>
+      </p>
+      <p>
+        <label
+          >Operando 2 <br />
+          <input type="number" name="op2" value="" />
+        </label>
+      </p>
+      <div>
+        <input type="checkbox" name="plus" id="plus" value="+" />
+        <label for="plus"><span></span>Suma</label>
+        <br />
+        <input type="checkbox" name="minus" id="minus" value="-" />
+        <label for="minus"><span></span>Resta</label>
+        <br />
+        <input type="checkbox" name="multiply" id="multiply" value="*" />
+        <label for="multiply"><span></span>Multiplica</label>
+        <br />
+        <input type="checkbox" name="division" id="division" value="/" />
+        <label for="division"><span></span>Divide</label>
+        <br />
+        <input type="checkbox" name="modulus" id="modulus" value="%" />
+        <label for="modulus"><span></span>Módulo</label>
+        <br />
+        <input type="checkbox" name="pow" id="pow" value="**" />
+        <label for="pow"><span></span>Exponente</label>
+      </div>
+      <!-- <button type="submit">Compute</button> -->
+    </form>
 
-    table td,
-    table th {
-      border: 1px solid black;
-      padding: .2rem .4rem;
-      text-align: center;
-    }
-    table th{
-    background: teal;}
-
-    table td:last-child {
-      text-align: right;
-    }
-
-
-  </style>
-</head>
-
-<body>
-  <form>
-    <p>
-      <label>Operando 1 <br> <input type="number" name="op1" value="20" /> </label>
-    </p>
-    <p>
-      <label>Operando 2 <br> <input type="number" name="op2" value="2" /> </label>
-    </p>
-    <label for="multiply">Multiplica
-      <input type="checkbox" name="multiply" id="multiply"></label>
-    <!-- <button type="submit">Compute</button> -->
-  </form>
-
-  <main>
-    <table>
-    </table>
-  </main>
-  <script src="./script.js"></script>
-</body>
-
+    <main>
+      <table></table>
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>

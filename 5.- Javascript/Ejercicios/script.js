@@ -2,6 +2,16 @@ let form = document.forms[0];
 let inputOp1 = document.querySelector('input[name="op1"]');
 let inputOp2 = document.querySelector('input[name="op2"]');
 let table = document.querySelector("main table");
+let checkboxs = form.querySelectorAll('input[type="checkbox"]');
+let displaytable = event => {
+  // event.preventDefault();
+
+  createOpTable(
+    Number(inputOp1.value),
+    Number(inputOp2.value),
+    addOperations()
+  );
+};
 
 // Al incluir la selección de la operación que se desea añadir(y ya que creo que no podemos guardar operadores aritméticos en variables) se ha creado esta función que no es mas que un switch-case que proporciona el resultado directamente del operador dado.
 
@@ -38,23 +48,30 @@ function addRow(num1, num2, operation) {
 
 // Función que permite generar la tabla en base a los operandos. También se ha añadido que el usuario pueda seleccionar las operaciones a mostrar (suma, resta, división, modulo y exponente)
 
-function createOpTable(num1, num2, ...operations) {
+function createOpTable(num1, num2, operations) {
   table.innerHTML = "<tr><th>Operación</th><th>Resultado</th></tr>";
 
   for (let i = 0; i < operations.length; i++) {
     addRow(num1, num2, operations[i]);
   }
-
 }
 
-inputOp1.addEventListener("input", event => {
-  event.preventDefault();
+function addOperations() {
+  let operations = [];
 
-  createOpTable(Number(inputOp1.value), Number(inputOp2.value), "+", "/", "-", "%");
-});
+  for (let index = 0; index < checkboxs.length; index++) {
+    if (checkboxs[index].checked) {
+      operations.push(checkboxs[index].value);
+    }
+  }
 
-inputOp2.addEventListener("input", event => {
-  event.preventDefault();
+  return operations;
+}
 
-  createOpTable(Number(inputOp1.value), Number(inputOp2.value), "+", "/", "-", "%");
-});
+inputOp1.addEventListener("input", displaytable);
+
+inputOp2.addEventListener("input", displaytable);
+
+for (let index = 0; index < checkboxs.length; index++) {
+  checkboxs[index].addEventListener("click", displaytable);
+}
