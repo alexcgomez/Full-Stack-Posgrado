@@ -1,0 +1,20 @@
+Javascript
+-----------
+- Motor V8 de google, mejor motor Javascript.
+- Utilizaremos ECMAScript 6.
+- babeljs --> Nos proporciona la posibilidad de transformar las versiones del código Javascript.
+- Nuevo framework experimental Rome (Sebastian McKenzie), permite , además de transformar versiones, unificar los archivos de código Javascript.
+- Ryan Dhal, trabajando en la evolucion de nodejs
+- NodeJS es la manera de ejecutar Javascript sin utilizar el navegador.
+- No instalar node directamente, instalar mediante "n" , que permite seleccionar la version e intercambiarlas y ademas añade al path automáticamente.
+
+
+Código:
+
+- Comentarios //
+- Si usamos "use strict" , Javascript, se utiliza de forma estricta a partir de ECMAScript 5.
+- Variables:
+        - let a; --> Instrucción que declara una variable "a", las variables, no tienen tipo, dependiendo del uso que le des, el lenguaje la interpreta
+        - const pizza = true; --> Const se utiliza para que no se le pueda asignar un nuevo valor a la variable, siempre vale su valor inicial
+        - mejor usar comparador === , compara, primero tipo, y luego valor.
+        
